@@ -1,18 +1,21 @@
 <h1>Add a picture</h1>
-<form action="/pictures" method="POST">
+<%= form_tag "/pictures" do %>
   <p>
-    <label>Artist</label><br>
-    <input type="text" name="artist"/>
+    <%= label_tag "artist" %><br>
+    <%= text_field_tag "artist" %>
   </p>
+
   <p>
-    <label>Title</label><br>
-    <input type="text" name="title"/>
+    <%= label_tag "title" %><br>
+    <%= text_field_tag "title" %>
   </p>
+
   <p>
-    <label>URL</label><br>
-    <input type="text" name="url"/>
+    <%= label_tag "url" %><br>
+    <%= text_field_tag "url" %>
   </p>
+
   <p>
-    <input type="submit"/>
+    <%= submit_tag "Save" %>
   </p>
-</form>
+<% end %>

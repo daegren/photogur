@@ -14,7 +14,7 @@ class PicturesController < ApplicationController
   end
 
   def create
-    # render :text => "Saving a picture. Url: #{params[:url]}, Title: #{params[:title]}, Artist: #{params[:artist]}"
+    render :text => "Saving a picture. Url: #{params[:url]}, Title: #{params[:title]}, Artist: #{params[:artist]}"
   end
 
   def load_data
