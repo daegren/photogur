@@ -5,14 +5,20 @@ class PicturesController < ApplicationController
   end
 
   def show
-    @picture = Pictures.find(params[:id])
+    @picture = Picture.find(params[:id])
   end
 
   def new
-
+    @picture = Picture.new
   end
 
   def create
-    render :text => "Saving a picture. Url: #{params[:url]}, Title: #{params[:title]}, Artist: #{params[:artist]}"
+    @picture = Picture.new(params[:picture])
+    if @picture.save
+      redirect_to pictures_url, :flash => {:notice => "Picture was saved successfully."}
+    else
+      flash.now[:error] = "Could not save the picture"
+      render :new
+    end
   end
 end
