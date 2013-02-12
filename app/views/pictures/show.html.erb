@@ -1,2 +1,5 @@
-<h1><%= @picture[:title]%></h1>
-<img src="<%= @picture[:url] %>">
+<h1><%= @picture.title%></h1>
+<p>
+<%= link_to "Back to Pictures", pictures_url %>
+</p>
+<%= image_tag @picture.url %>

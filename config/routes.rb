@@ -4,6 +4,8 @@ Photogur::Application.routes.draw do
   match 'pictures/new' => 'pictures#new'
   match 'pictures/:id' => 'pictures#show'
 
+  root :to => 'pictures#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
