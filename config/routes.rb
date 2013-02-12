@@ -1,9 +1,6 @@
 Photogur::Application.routes.draw do
-  post  'pictures' => 'pictures#create'
-  match 'pictures' => 'pictures#index'
-  match 'pictures/new' => 'pictures#new'
-  match 'pictures/:id' => 'pictures#show'
-
+  
+  resources :pictures
   root :to => 'pictures#index'
 
   # The priority is based upon order of creation:

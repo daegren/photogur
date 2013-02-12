@@ -6,24 +6,5 @@
   <%= flash[:error] %>
 </div>
 
-<%= form_for @picture do |f| %>
-  <p>
-    <%= f.label "artist" %><br>
-    <%= f.text_field "artist" %>
-  </p>
-
-  <p>
-    <%= f.label "title" %><br>
-    <%= f.text_field "title" %>
-  </p>
-
-  <p>
-    <%= f.label "url" %><br>
-    <%= f.text_field "url" %>
-  </p>
-
-  <p>
-    <%= f.submit "Save" %>
-  </p>  
-<% end %>
+<%= render :partial => "form" %>
 
