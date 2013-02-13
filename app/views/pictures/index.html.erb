@@ -7,6 +7,6 @@
 <%= link_to "New Picture", "/pictures/new" %>
 
 <%- @pictures.each do |picture| %>
-  <p><%= picture.title %>, <%= picture.artist %></p>
+  <p><%= picture.title %>, <%= "Copyright:" if picture.copyrighted %> <%= picture.artist %></p>
   <%= link_to(image_tag(picture.url), picture) %>
 <% end %>
