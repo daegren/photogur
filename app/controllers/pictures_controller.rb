@@ -34,4 +34,10 @@ class PicturesController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+    @picture = Picture.find(params[:id])
+    @picture.destroy
+    redirect_to pictures_url, :flash => {:notice => "The picture \"#{@picture.title}\" has been deleted."}
+  end
 end
