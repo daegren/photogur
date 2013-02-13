@@ -17,7 +17,6 @@ class PicturesController < ApplicationController
     if @picture.save
       redirect_to pictures_url, :flash => {:notice => "Picture was saved successfully."}
     else
-      flash.now[:error] = "Could not save the picture"
       render :new
     end
   end
@@ -32,7 +31,6 @@ class PicturesController < ApplicationController
     if @picture.update_attributes(params[:picture])
       redirect_to "/pictures/#{@picture.id}"
     else
-      flash.now[:error] = "Could not update the picture."
       render :edit
     end
   end
