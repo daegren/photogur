@@ -1,7 +1,7 @@
 class PicturesController < ApplicationController
 
   def index
-    @pictures = Picture.not_copyrighted.newest_first
+    @pictures = Picture.newest_first
   end
 
   def show
