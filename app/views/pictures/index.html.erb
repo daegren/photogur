@@ -1,12 +1,19 @@
-<h1>Pictures (<%= @pictures.length %>)</h1>
+<div class="row">
+  <div class="span12">
+    <h1>Pictures (<%= @pictures.length %>)</h1>
 
-<% if flash[:notice] %>
-  <p class="notice"><%= flash[:notice] %></p>
-<% end %>
+    <% if flash[:notice] %>
+      <p class="notice"><%= flash[:notice] %></p>
+    <% end %>
 
-<%= link_to "New Picture", "/pictures/new" %>
+    <%= link_to "New Picture", "/pictures/new" %>
 
-<%- @pictures.each do |picture| %>
-  <p><%= picture.title %>, <%= "Copyright:" if picture.copyrighted %> <%= picture.artist %></p>
-  <%= link_to(image_tag(picture.url), picture) %>
-<% end %>
+
+    <%- @pictures.each do |picture| %>
+      <div class="well">
+        <p><%= picture.title %>, <%= "Copyright:" if picture.copyrighted %> <%= picture.artist %></p>
+      </div>
+      <%= link_to(image_tag(picture.url), picture) %>
+    <% end %>
+  </div>
+</div>
