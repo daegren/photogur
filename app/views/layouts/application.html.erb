@@ -25,6 +25,27 @@
   </div>
 
   <div class="container">
+
+    <div class="row">
+      <div class="span12">
+        <% if notice.present? %>
+        <p class="notice"><%= notice %></p>
+        <% end %>
+        <% if alert.present? %>
+        <p class="alert"><%= alert %></p>
+        <% end %>
+
+        <div class="session-links">
+          <% if user_signed_in? %>
+            <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+          <% else %>
+            <%= link_to "Login", "/users/sign_in"%>
+            <%= link_to "Sign Up", "/users/sign_up" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
     <%= yield %>
   </div>
 
