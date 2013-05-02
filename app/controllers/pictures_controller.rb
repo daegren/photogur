@@ -1,7 +1,10 @@
 class PicturesController < ApplicationController
 
+  respond_to :json, :html
+
   def index
     @pictures = Picture.newest_first
+    respond_with @picture
   end
 
   def show
