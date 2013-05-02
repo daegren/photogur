@@ -11,3 +11,8 @@
  *= require_self
  *= require_tree .
  */
+
+.session-links
+{
+  float: right;
+}

@@ -8,7 +8,19 @@
 </head>
 <body>
 
-<%= yield %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <div class="session-links">
+    <% if user_signed_in? %>
+      <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+    <% else %>
+      <%= link_to "Login", "/users/sign_in"%>
+      <%= link_to "Sign Up", "/users/sign_up" %>
+    <% end %>
+  </div>
+
+  <%= yield %>
 
 </body>
 </html>

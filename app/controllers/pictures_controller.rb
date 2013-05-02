@@ -1,6 +1,7 @@
 class PicturesController < ApplicationController
 
   respond_to :json, :html
+  before_filter :authenticate_user!
 
   def index
     @pictures = Picture.newest_first
